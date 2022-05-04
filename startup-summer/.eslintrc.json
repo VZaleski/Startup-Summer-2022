@@ -8,9 +8,9 @@
         "plugin:import/errors",
         "plugin:import/warnings",
         "google",
-        "plugin:prettier/recommended",
         "prettier",
-        "prettier/react"
+        "plugin:react-hooks/recommended",
+        "plugin:prettier/recommended"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
