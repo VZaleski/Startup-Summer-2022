@@ -4,15 +4,16 @@
         "es2021": true
     },
     "extends": [
+        "eslint:recommended",
         "plugin:react/recommended",
-        "plugin:import/errors",
-        "plugin:import/warnings",
-        "google",
-        "prettier",
         "plugin:react-hooks/recommended",
-        "plugin:prettier/recommended"
+        "plugin:react/jsx-ally",
+        "plugin:import/recommended",
+        "airbnb",
+        "plugin:react/jsx-runtime",
+        "plugin:prettier/recommended",
+        "prettier"
     ],
-    "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
@@ -22,24 +23,9 @@
     },
     "plugins": [
         "react",
-        "@typescript-eslint",
         "prettier"
     ],
     "rules": {
-        "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "warn",
-        "comma-dangle": ["error", "only-multiline"],
-        "react/prop-types": "off",
-        "react/display-name": "off",
-        "prettier/prettier": ["error", { "endOfLine": "auto" }],
-        "react/jsx-uses-react": "off",
-        "react/react-in-jsx-scope": "off"
-    },
-    "settings": {
-        "react": {
-            "pragma": "React",
-            "version": "detect"
-        }
-    },
-    "root": true
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    }
 }
