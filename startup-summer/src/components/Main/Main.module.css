@@ -1,0 +1,11 @@
+.main{
+    width: 100%;
+    background: #F9F9F9;;
+    margin: 0 auto;
+}
+
+.wrapper {
+    width: 1254px;
+    margin: 0 auto;
+    display: flex;
+}
