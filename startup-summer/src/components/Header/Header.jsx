@@ -8,7 +8,7 @@ function Header() {
       <div className={s.wrapper}>
         <img className={s.logo} src={logo} alt="logo" />
         <form className={s.search}>
-          <input type="search" placeholder="Search" className={s.search__input} />
+          <input type="search" placeholder="Enter GitHub username" className={s.search__input} />
           <button type="submit" className={s.search__button}>
             <img className={s.search__icon} src={magniferIcon} alt="magnifer" />
           </button>

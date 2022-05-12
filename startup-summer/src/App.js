@@ -1,14 +1,14 @@
 import './App.css';
 import Header from './components/Header/Header';
-import Main from './components/Main/Main';
+import Initial from './components/Initial/Initial';
+//  import Main from './components/Main/Main';
 
 function App() {
   return (
     <div className="App">
-      <div className="wrapper">
-        <Header />
-        <Main />
-      </div>
+      <Header />
+      {/*  <Main />  */}
+      <Initial />
     </div>
   );
 }
