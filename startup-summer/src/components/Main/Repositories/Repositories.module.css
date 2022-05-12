@@ -1,4 +1,5 @@
 .repositories {
+    width: 877px;
     margin-left: 87px;
 }
 
@@ -9,4 +10,26 @@
     font-size: 32px;
     line-height: 130%;
     color: #000000;
+}
+
+@media screen and (max-width: 1400px) {
+    .repositories {
+        width:80%
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .repositories {
+        margin: 0;
+    }
+
+    .title {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .repositories {
+        width: 280px;
+    }
 }
