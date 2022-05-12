@@ -22,3 +22,9 @@
     color: #808080;
     margin-top: 47px;
 }
+
+@media screen and (max-width: 780px) {
+    .empty {
+        margin: 25px auto 0;
+    }
+}
