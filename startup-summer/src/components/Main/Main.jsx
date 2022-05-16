@@ -1,7 +1,7 @@
 import s from './Main.module.css';
 import Profile from './Profile/Profile';
-import EmptyList from './EmptyList/EmptyList';
-//  import Repositories from './Repositories/Repositories';
+//  import EmptyList from './EmptyList/EmptyList';
+import Repositories from './Repositories/Repositories';
 
 function Main() {
   return (
@@ -10,7 +10,7 @@ function Main() {
         <Profile />
         {/*  <Repositories />  */}
         {/*  <EmptyList />  */}
-        <EmptyList />
+        <Repositories />
       </div>
     </main>
   );
