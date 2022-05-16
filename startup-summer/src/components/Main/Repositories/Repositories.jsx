@@ -6,8 +6,10 @@ function Repositories() {
   const arrayRepositories = stateTest.map(() => <OneRepository />);
   return (
     <div className={s.repositories}>
-      <h2 className={s.title}>Repositories(269)</h2>
-      {arrayRepositories}
+      <div className={s.wrapper__title}>
+        <h2 className={s.title}>Repositories(269)</h2>
+      </div>
+      <div className={s.wrapper__repositories}>{arrayRepositories}</div>
     </div>
   );
 }

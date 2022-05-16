@@ -12,6 +12,16 @@
     color: #000000;
 }
 
+.wrapper__repositories :hover {
+    cursor: pointer;
+    background: #f2f2f2;
+}
+
+.wrapper__title :hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 @media screen and (max-width: 1400px) {
     .repositories {
         width:80%
