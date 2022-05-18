@@ -2,14 +2,26 @@ import axios from 'axios';
 import { useState } from 'react';
 
 const baseUrl = 'https://api.github.com/users/';
-//  let error = false;
-//  let dataUser = {};
-//  const urlRepos = 'https://api.github.com/users/USERNAME/repos'
-//  const username = 'VZaleski';
+const repos = '/repos';
 
 const UseDataGit = () => {
   const [data, setData] = useState(null);
+  const [dataRepos, setDataRepos] = useState(null);
   const [errorUser, setErrorUser] = useState(false);
+  const [errorRepos, setErrorRepos] = useState(false);
+
+  const getInfoRepos = (name) => {
+    axios
+      .get(`${baseUrl}${name}${repos}`)
+      .then((response) => {
+        const allDataRepos = response.data;
+        setDataRepos(allDataRepos);
+        setErrorRepos(false);
+      })
+      .catch(() => {
+        setErrorRepos(true);
+      });
+  };
 
   const getInfoUser = (name) => {
     axios
@@ -18,6 +30,7 @@ const UseDataGit = () => {
         const allData = response.data;
         setData(allData);
         setErrorUser(false);
+        getInfoRepos(name);
       })
       .catch(() => {
         setErrorUser(true);
@@ -26,7 +39,9 @@ const UseDataGit = () => {
 
   return {
     data,
+    dataRepos,
     errorUser,
+    errorRepos,
     getInfoUser,
   };
 };

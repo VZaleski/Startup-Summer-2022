@@ -1,14 +1,21 @@
+import PropTypes from 'prop-types';
 import s from './OneRepository.module.css';
 
-function OneRepository() {
+function OneRepository({ name, description, url }) {
   return (
     <div className={s.oneRepository}>
-      <h3 className={s.title}>react-hot-loader</h3>
-      <p className={s.description}>
-        Tweak React components in real time. (Deprecated: use Fast Refresh instead.
-      </p>
+      <a className={s.title} href={url} target="_blank" rel="noreferrer">
+        {name}
+      </a>
+      <p className={s.description}>{description}</p>
     </div>
   );
 }
+
+OneRepository.propTypes = {
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+};
 
 export default OneRepository;

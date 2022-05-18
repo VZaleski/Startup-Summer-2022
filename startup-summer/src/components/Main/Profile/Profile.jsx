@@ -1,29 +1,31 @@
+import PropTypes from 'prop-types';
 import s from './Profile.module.css';
-import logoProfile from '../../../assets/images/profile_image.png';
 import iconFollowers from '../../../assets/images/followers_icon.svg';
 import iconFollowing from '../../../assets/images/following_icon.svg';
 
-function Profile() {
+function Profile({ data }) {
+  const logo = data.avatar_url;
+  const { name, login, followers, following } = data;
+  const url = data.html_url;
   return (
     <div className={s.profile}>
-      <img className={s.logo} src={logoProfile} alt="profile" />
-      <h2 className={s.title}>Dan Abramov</h2>
-      <a
-        className={s.link}
-        href="https://github.com/VZaleski?tab=repositories"
-        target="_blank"
-        rel="noreferrer"
-      >
-        gaearon
+      <img className={s.logo} src={logo} alt="profile" />
+      <h2 className={s.title}>{name}</h2>
+      <a className={s.link} href={url} target="_blank" rel="noreferrer">
+        {login}
       </a>
       <div className={s.info}>
         <img className={s.info__image} src={iconFollowers} alt="followers" />
-        <span className={s.info__text}>65.8k followers</span>
+        <span className={s.info__text}>{followers} followers</span>
         <img className={s.info__image} src={iconFollowing} alt="following" />
-        <span className={s.info__text}>171 following</span>
+        <span className={s.info__text}>{following} following</span>
       </div>
     </div>
   );
 }
+
+Profile.propTypes = {
+  data: PropTypes.objectOf.isRequired,
+};
 
 export default Profile;
