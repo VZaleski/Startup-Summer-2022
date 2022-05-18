@@ -6,21 +6,14 @@ const repos = '/repos';
 
 const UseDataGit = () => {
   const [data, setData] = useState(null);
-  const [dataRepos, setDataRepos] = useState(null);
+  const [dataRepos, setDataRepos] = useState([]);
   const [errorUser, setErrorUser] = useState(false);
-  const [errorRepos, setErrorRepos] = useState(false);
 
   const getInfoRepos = (name) => {
-    axios
-      .get(`${baseUrl}${name}${repos}`)
-      .then((response) => {
-        const allDataRepos = response.data;
-        setDataRepos(allDataRepos);
-        setErrorRepos(false);
-      })
-      .catch(() => {
-        setErrorRepos(true);
-      });
+    axios.get(`${baseUrl}${name}${repos}`).then((response) => {
+      const allDataRepos = response.data;
+      setDataRepos(allDataRepos);
+    });
   };
 
   const getInfoUser = (name) => {
@@ -41,7 +34,6 @@ const UseDataGit = () => {
     data,
     dataRepos,
     errorUser,
-    errorRepos,
     getInfoUser,
   };
 };

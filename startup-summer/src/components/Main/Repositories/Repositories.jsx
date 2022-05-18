@@ -4,8 +4,7 @@ import { useState } from 'react';
 import s from './Repositories.module.css';
 import OneRepository from './OneRepository/OneRepository';
 
-function Repositories({ dataRepos, errorRepos }) {
-  console.log(errorRepos);
+function Repositories({ dataRepos }) {
   const countRepos = dataRepos.length;
   const arrayRepositories = dataRepos.map((element) => (
     <OneRepository name={element.name} description={element.description} url={element.html_url} />
@@ -65,7 +64,6 @@ function Repositories({ dataRepos, errorRepos }) {
 
 Repositories.propTypes = {
   dataRepos: PropTypes.arrayOf.isRequired,
-  errorRepos: PropTypes.bool.isRequired,
 };
 
 export default Repositories;

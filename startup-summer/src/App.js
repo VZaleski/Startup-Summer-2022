@@ -6,7 +6,7 @@ import Main from './components/Main/Main';
 import useDataGit from './hooks/useDataGit';
 
 function App() {
-  const { data, dataRepos, errorUser, errorRepos, getInfoUser } = useDataGit();
+  const { data, dataRepos, errorUser, getInfoUser } = useDataGit();
   const sendInfoUser = (name) => {
     getInfoUser(name);
   };
@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       <Header sendInfoUser={sendInfoUser} />
       {!data && !errorUser && <Initial />}
-      {data && !errorUser && <Main data={data} dataRepos={dataRepos} errorRepos={errorRepos} />}
+      {data && !errorUser && <Main data={data} dataRepos={dataRepos} />}
       {errorUser && <UserNotFound />}
     </div>
   );
