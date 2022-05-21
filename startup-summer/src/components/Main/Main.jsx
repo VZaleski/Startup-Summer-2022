@@ -35,6 +35,7 @@ Main.propTypes = {
   }).isRequired,
   dataRepos: PropTypes.arrayOf(
     PropTypes.shape({
+      id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
       description: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
       html_url: PropTypes.string.isRequired,

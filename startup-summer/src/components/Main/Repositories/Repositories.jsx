@@ -7,7 +7,12 @@ import OneRepository from './OneRepository/OneRepository';
 function Repositories({ dataRepos }) {
   const countRepos = dataRepos.length;
   const arrayRepositories = dataRepos.map((element) => (
-    <OneRepository name={element.name} description={element.description} url={element.html_url} />
+    <OneRepository
+      key={element.id}
+      name={element.name}
+      description={element.description}
+      url={element.html_url}
+    />
   ));
   const countReposPage = 4;
   const [currentPage, setCurrentPage] = useState(1);
@@ -64,6 +69,7 @@ function Repositories({ dataRepos }) {
 Repositories.propTypes = {
   dataRepos: PropTypes.arrayOf(
     PropTypes.shape({
+      id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
       description: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
       html_url: PropTypes.string.isRequired,
