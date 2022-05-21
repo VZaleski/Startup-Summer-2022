@@ -26,12 +26,12 @@ function Profile({ data }) {
 
 Profile.propTypes = {
   data: PropTypes.shape({
-    avatar_url: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    login: PropTypes.string.isRequired,
-    followers: PropTypes.number.isRequired,
-    following: PropTypes.number.isRequired,
-    html_url: PropTypes.string.isRequired,
+    avatar_url: PropTypes.string,
+    name: PropTypes.string,
+    login: PropTypes.string,
+    followers: PropTypes.number,
+    following: PropTypes.number,
+    html_url: PropTypes.string,
   }),
 };
 
@@ -41,6 +41,8 @@ Profile.defaultProps = {
     name: null,
     login: null,
     html_url: null,
+    followers: 0,
+    following: 0,
   },
 };
 
