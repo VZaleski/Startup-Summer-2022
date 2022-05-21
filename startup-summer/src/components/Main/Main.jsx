@@ -5,6 +5,8 @@ import Repositories from './Repositories/Repositories';
 import EmptyList from './EmptyList/EmptyList';
 
 function Main({ data, dataRepos }) {
+  console.log(data);
+  console.log(dataRepos);
   let error = false;
   if (dataRepos.length) {
     error = false;
@@ -23,8 +25,21 @@ function Main({ data, dataRepos }) {
 }
 
 Main.propTypes = {
-  data: PropTypes.objectOf.isRequired,
-  dataRepos: PropTypes.arrayOf.isRequired,
+  data: PropTypes.shape({
+    avatar_url: PropTypes.string,
+    name: PropTypes.string,
+    login: PropTypes.string,
+    followers: PropTypes.number,
+    following: PropTypes.number,
+    html_url: PropTypes.string,
+  }).isRequired,
+  dataRepos: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      description: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+      html_url: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
 };
 
 export default Main;

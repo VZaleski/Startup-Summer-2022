@@ -27,7 +27,6 @@ function Repositories({ dataRepos }) {
   const handlePageClick = (event) => {
     setCurrentPage(event.selected + 1);
   };
-
   return (
     <div className={s.repositories}>
       <div className={s.wrapper__title}>
@@ -63,7 +62,13 @@ function Repositories({ dataRepos }) {
 }
 
 Repositories.propTypes = {
-  dataRepos: PropTypes.arrayOf.isRequired,
+  dataRepos: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      description: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+      html_url: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
 };
 
 export default Repositories;

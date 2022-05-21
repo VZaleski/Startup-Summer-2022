@@ -25,7 +25,23 @@ function Profile({ data }) {
 }
 
 Profile.propTypes = {
-  data: PropTypes.objectOf.isRequired,
+  data: PropTypes.shape({
+    avatar_url: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    login: PropTypes.string.isRequired,
+    followers: PropTypes.number.isRequired,
+    following: PropTypes.number.isRequired,
+    html_url: PropTypes.string.isRequired,
+  }),
+};
+
+Profile.defaultProps = {
+  data: {
+    avatar_url: null,
+    name: null,
+    login: null,
+    html_url: null,
+  },
 };
 
 export default Profile;

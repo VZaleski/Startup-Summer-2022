@@ -13,9 +13,15 @@ function OneRepository({ name, description, url }) {
 }
 
 OneRepository.propTypes = {
-  name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  description: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  url: PropTypes.string,
+};
+
+OneRepository.defaultProps = {
+  name: null,
+  description: null,
+  url: null,
 };
 
 export default OneRepository;
