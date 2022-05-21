@@ -5,8 +5,6 @@ import Repositories from './Repositories/Repositories';
 import EmptyList from './EmptyList/EmptyList';
 
 function Main({ data, dataRepos }) {
-  console.log(data);
-  console.log(dataRepos);
   let error = false;
   if (dataRepos.length) {
     error = false;
