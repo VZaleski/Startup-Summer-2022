@@ -3,6 +3,10 @@ import { useState } from 'react';
 
 const baseUrl = 'https://api.github.com/users/';
 const repos = '/repos';
+const type = 'all';
+const sort = 'updated';
+// eslint-disable-next-line camelcase
+const per_page = 100;
 
 const UseDataGit = () => {
   const [data, setData] = useState(null);
@@ -11,10 +15,13 @@ const UseDataGit = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const getInfoRepos = (name) => {
-    axios.get(`${baseUrl}${name}${repos}`).then((response) => {
-      const allDataRepos = response.data;
-      setDataRepos(allDataRepos);
-    });
+    axios
+      // eslint-disable-next-line camelcase
+      .get(`${baseUrl}${name}${repos}`, { params: { type, sort, per_page } })
+      .then((response) => {
+        const allDataRepos = response.data;
+        setDataRepos(allDataRepos);
+      });
   };
 
   const getInfoUser = (name) => {
