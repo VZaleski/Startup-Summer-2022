@@ -5,7 +5,10 @@
     justify-content: center;
     width: 210px;
     height: 196px;
-    margin: 197px auto 0px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 200px auto;
 }
 
 .image {
@@ -21,10 +24,4 @@
     text-align: center;
     color: #808080;
     margin-top: 47px;
-}
-
-@media screen and (max-width: 780px) {
-    .initial {
-        margin: 125px auto 0;
-    }
 }

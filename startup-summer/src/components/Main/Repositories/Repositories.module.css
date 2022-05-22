@@ -13,9 +13,10 @@
 }
 
 .wrapper__pagination {
+    width: 877px;
     height: 60px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     margin-top: 15px;
     margin-bottom: 15px;
@@ -48,6 +49,9 @@
     .repositories {
         width:80%
     }
+    .wrapper__pagination {
+        width:80%;
+    }
 }
 
 @media screen and (max-width: 780px) {
@@ -58,10 +62,21 @@
     .title {
         text-align: center;
     }
+
+    .wrapper__pagination {
+        flex-direction: column;
+    }
+
+    .text {
+        margin-bottom: 10px;
+    }
 }
 
 @media screen and (max-width: 400px) {
     .repositories {
+        width: 280px;
+    }
+    .wrapper__pagination {
         width: 280px;
     }
 }

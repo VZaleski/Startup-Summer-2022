@@ -50,7 +50,7 @@ function Repositories({ dataRepos }) {
           marginPagesDisplayed={2}
           pageRangeDisplayed={2}
           onPageChange={handlePageClick}
-          containerClassName={`pagination ${s.paginationMargin}`}
+          containerClassName={`pagination pagination-sm ${s.paginationMargin}`}
           previousClassName="page-item"
           pageClassName="page-item"
           breakClassName="page-item"
